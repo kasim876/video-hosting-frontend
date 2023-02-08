@@ -1,0 +1,59 @@
+@use 'sass:math';
+
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    src: url('../resources/fonts/#{$url}.woff2') format('woff2');
+    font-family: '#{$font-family}';
+    font-weight: #{$weight};
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@function rem($value) {
+  @return math.div($value, 16) * 1rem;
+}
+
+@function em($current-value, $parent-value: 16) {
+  @return math.div($current-value, $parent-value) * 1em;
+}
+
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Media Queries
+
+@mixin resolution($px) {
+  @media (max-width: rem($px)) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: rem(1025)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: rem(1024)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: rem(768)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: rem(576)) {
+    @content;
+  }
+}

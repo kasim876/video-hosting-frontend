@@ -1,0 +1,19 @@
+@import 'src/styles/mixins.scss';
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --primary-text: #fff;
+  --primary-icon: #fff;
+  --secondary-text: rgb(180 170 200);
+  --secondary-icon: rgb(180 170 200);
+  --primary-button-background: #1b74e4;
+  --hover-overlay: rgba(0 0 0 / 5%);
+  --shadow: 0 12px 28px 0 rgba(0 0 0 / 20%), 0 2px 4px 0 rgba(0 0 0 / 10%);
+  --font-family: 'Ubuntu', sans-serif;
+  --content-width: #{rem(1110)};
+  --container-offset: #{rem(15)};
+  --bg-body: rgb(31 29 43);
+  --header-height: #{rem(72)};
+  --menu-width: #{rem(300)};
+}
