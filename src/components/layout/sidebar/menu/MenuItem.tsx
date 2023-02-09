@@ -4,13 +4,21 @@ import {NavLink} from 'react-router-dom';
 
 import {IMenuItem} from '@components/layout/sidebar/menu/menu.interface';
 
+import {useAuth} from '@/hooks/useAuth';
+
 import classes from './Menu.module.scss';
 
 const MenuItem: FC<{item: IMenuItem}> = ({item}) => {
+  const {user} = useAuth();
+
+  if (!user && item.link === '/channel') {
+    return null;
+  }
+
   return (
     <li className={classes.item}>
       <NavLink
-        to={item.link}
+        to={item.link === '/channel' ? `/channel/${user?.username}` : item.link}
         className={({isActive}) =>
           cn(classes.link, isActive && classes.linkActive)
         }
