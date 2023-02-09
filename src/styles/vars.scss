@@ -1,13 +1,14 @@
 @import 'src/styles/mixins.scss';
 
 :root {
+  --primary: rgb(214 115 92);
   --white: #fff;
   --black: #000;
   --primary-text: #fff;
   --primary-icon: #fff;
-  --secondary-text: rgb(180 170 200);
-  --secondary-icon: rgb(180 170 200);
-  --primary-button-background: #1b74e4;
+  --secondary-text: #b0b0b0;
+  --secondary-icon: #4b4a58;
+  --primary-background: rgb(53 51 64);
   --hover-overlay: rgba(0 0 0 / 5%);
   --shadow: 0 12px 28px 0 rgba(0 0 0 / 20%), 0 2px 4px 0 rgba(0 0 0 / 10%);
   --font-family: 'Ubuntu', sans-serif;
