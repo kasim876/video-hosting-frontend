@@ -1,6 +1,7 @@
 import Home from '@pages/Home';
 import Uploader from '@pages/Uploader';
 import Video from '@pages/Video';
+
 import {HOME_ROUTE, UPLOAD_ROUTE, VIDEO_ROUTE} from '@utils/consts';
 
 export const ROUTES = [
