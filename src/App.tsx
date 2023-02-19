@@ -1,14 +1,24 @@
 import React, {FC} from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-import Layout from '@components/layout';
+import '@assets/styles/App.scss';
 
-import './styles/App.scss';
+import {ROUTES} from './routes';
 
 const App: FC = () => {
   return (
     <BrowserRouter>
-      <Layout />
+      <main>
+        <Routes>
+          {ROUTES.map(({path, element}) => (
+            <Route
+              key={path}
+              path={path}
+              element={element}
+            />
+          ))}
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 };

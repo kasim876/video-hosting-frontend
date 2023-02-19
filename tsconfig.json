@@ -27,6 +27,18 @@
       "@components/*": [
         "components/*"
       ],
+      "@ui/*": [
+        "ui/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
       "@assets/*": [
         "assets/*"
       ],
