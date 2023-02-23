@@ -20,7 +20,7 @@ export const Profile: FC<Props> = ({username, avatarPath}) => {
       ) : (
         <HiOutlineUserCircle className={classes.icon} />
       )}
-      <span>{username}</span>
+      <b>{username}</b>
     </button>
   );
 };
