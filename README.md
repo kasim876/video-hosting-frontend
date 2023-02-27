@@ -1,4 +1,4 @@
-# react-start-config
+# video-hosting
 
 ### npm install / yarn
 
