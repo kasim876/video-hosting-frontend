@@ -9,7 +9,7 @@ type Props = {
   avatar: string;
   title: string;
   name: string;
-  poster: string;
+  thumbnail: string;
   link: string;
   views: number;
   date: string;
@@ -18,7 +18,7 @@ type Props = {
 export const VideoCard: FC<Props> = ({
   avatar,
   title,
-  poster,
+  thumbnail,
   link,
   name,
   views,
@@ -33,7 +33,7 @@ export const VideoCard: FC<Props> = ({
     >
       <img
         className={classes.img}
-        src={poster}
+        src={thumbnail}
         alt=""
       />
       <div className={classes.details}>
