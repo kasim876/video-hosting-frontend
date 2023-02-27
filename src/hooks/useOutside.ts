@@ -17,10 +17,10 @@ export default function useOutside(initialIsVisible: boolean): TypeOut {
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleClickOutside, true);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside, true);
     };
   });
 
