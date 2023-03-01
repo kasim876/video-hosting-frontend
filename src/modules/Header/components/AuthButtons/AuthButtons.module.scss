@@ -1,0 +1,12 @@
+@import '/src/assets/styles/mixins.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: rem(15);
+  }
+}

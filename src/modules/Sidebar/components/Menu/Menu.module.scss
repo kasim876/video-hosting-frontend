@@ -1,0 +1,23 @@
+@import '/src/assets/styles/mixins.scss';
+
+.root {
+  margin: rem(50) 0;
+
+  &:not(:last-child) {
+    &::after {
+      content: '';
+      display: block;
+      margin: rem(50) var(--menu-inner-offset) 0;
+      height: 1px;
+      background-color: var(--secondary);
+    }
+  }
+}
+
+.title {
+  margin-bottom: rem(20);
+  padding-left: var(--menu-inner-offset);
+  font-size: rem(14);
+  text-transform: uppercase;
+  color: var(--secondary-text);
+}
