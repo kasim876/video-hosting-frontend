@@ -1,0 +1,7 @@
+@import '/src/assets/styles/mixins.scss';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 rem(20);
+}
