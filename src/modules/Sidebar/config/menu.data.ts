@@ -23,22 +23,22 @@ export const menu: IMenuItem[] = [
 export const subscriptions: IMenuItem[] = [
   {
     link: '/channel/2',
-    title: 'Дима Гордей',
-    image: '/avatar.jpg',
+    title: 'ЛИТВИН',
+    image: '/avatar/avatar_1.jpg',
   },
   {
     link: '/channel/3',
-    title: 'НИКИТОС',
-    image: '/avatar2.jpg',
+    title: 'Дима Гордей',
+    image: '/avatar/avatar_2.jpg',
   },
   {
     link: '/channel/4',
-    title: 'ЛИТВИН',
-    image: '/avatar3.jpg',
+    title: 'itpedia',
+    image: '/avatar/avatar_3.jpg',
   },
   {
     link: '/channel/5',
-    title: 'itpedia',
-    image: '/avatar4.jpg',
+    title: 'НИКИТОС',
+    image: '/avatar/avatar_4.jpg',
   },
 ];
