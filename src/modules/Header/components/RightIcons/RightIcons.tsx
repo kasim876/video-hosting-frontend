@@ -1,22 +1,33 @@
-import {FC} from 'react';
+import {FC, useState} from 'react';
 
 import {useAuth} from '@hooks/useAuth';
+import useOutside from '@hooks/useOutside';
 
-import {ButtonOutlined} from '@ui/ButtonOutlined';
-import {ButtonSolid} from '@ui/ButtonSolid';
-
+import AuthButtons from '../AuthButtons/AuthButtons';
+import {AuthForm} from '../AuthForm/AuthForm';
 import {Profile} from '../Profile/Profile';
 
-import classes from './RightIcons.module.scss';
-
 export const RightIcons: FC = () => {
+  const [type, setType] = useState<'register' | 'login'>('login');
+
+  const {ref, isShow, setIsShow} = useOutside(false);
+
   const {user} = useAuth();
 
   if (!user) {
     return (
-      <div className={classes.root}>
-        <ButtonOutlined className={classes.button}>Войти</ButtonOutlined>
-        <ButtonSolid className={classes.button}>Регистрация</ButtonSolid>
+      <div>
+        <AuthButtons
+          setType={setType}
+          setIsShow={setIsShow}
+        />
+        {isShow && (
+          <AuthForm
+            setIsShow={setIsShow}
+            type={type}
+            ref={ref}
+          />
+        )}
       </div>
     );
   }
