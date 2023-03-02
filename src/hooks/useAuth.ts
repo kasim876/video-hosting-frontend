@@ -1,6 +1,9 @@
-import {IAuthData} from '@/types/AuthData';
+import {TypedUseSelectorHook, useSelector} from 'react-redux';
 
-export const useAuth = (): IAuthData => ({
-  user: null,
-  accessToken: '',
-});
+import {RootState} from '@store/reducer';
+
+export const useAuth = () => {
+  const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+  return useTypedSelector(state => state.user);
+};
