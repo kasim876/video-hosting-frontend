@@ -1,9 +1,5 @@
-import {TypedUseSelectorHook, useSelector} from 'react-redux';
-
-import {RootState} from '@store/reducer';
+import {useAppSelector} from './useAppSelector';
 
 export const useAuth = () => {
-  const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
-
-  return useTypedSelector(state => state.user);
+  return useAppSelector(state => state.user);
 };
