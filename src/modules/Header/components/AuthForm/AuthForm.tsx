@@ -2,11 +2,16 @@ import {AxiosError} from 'axios';
 import {Dispatch, SetStateAction, forwardRef} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 
+import {useAppDispatch} from '@hooks/useAppDispatch';
+
 import {ButtonSolid} from '@ui/ButtonSolid';
+
+import {setUser} from '@store/slices/userSlice';
 
 import {login, registration} from '../../api';
 import {EMAIL_PATTERN} from '../../consts';
 import {IAuthFields} from '../../types/AuthFields';
+
 import AuthField from '../AuthField/AuthField';
 
 import classes from './AuthForm.module.scss';
@@ -18,6 +23,8 @@ type Props = {
 
 export const AuthForm = forwardRef<HTMLFormElement, Props>(
   ({type, setIsShow}, ref) => {
+    const dispatch = useAppDispatch();
+
     const {
       register,
       handleSubmit,
@@ -28,7 +35,7 @@ export const AuthForm = forwardRef<HTMLFormElement, Props>(
     });
 
     const onSubmit: SubmitHandler<IAuthFields> = async data => {
-      let user;
+      let user: any;
 
       try {
         if (type === 'register') {
@@ -37,7 +44,13 @@ export const AuthForm = forwardRef<HTMLFormElement, Props>(
           user = await login(data.email, data.password);
         }
 
-        console.log(user);
+        dispatch(
+          setUser({
+            user: user,
+            accessToken: localStorage.getItem('token'),
+          }),
+        );
+
         setIsShow(false);
       } catch (error) {
         const err = error as AxiosError;

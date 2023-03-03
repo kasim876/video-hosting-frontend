@@ -34,8 +34,8 @@ export const RightIcons: FC = () => {
 
   return (
     <Profile
-      username={user.username}
-      avatarPath={user.avatarPath}
+      username={user.name}
+      avatarPath={user.avatarPath || ''}
     />
   );
 };
