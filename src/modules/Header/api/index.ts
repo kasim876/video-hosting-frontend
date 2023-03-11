@@ -3,7 +3,7 @@ import jwtDecode from 'jwt-decode';
 import {host} from '@/api';
 
 export const login = async (email: string, password: string) => {
-  const {data} = await host.post('user/login', {email, password});
+  const {data} = await host.post('users/login', {email, password});
 
   localStorage.setItem('token', data.token);
 
@@ -15,7 +15,7 @@ export const registration = async (
   email: string,
   password: string,
 ) => {
-  const {data} = await host.post('user/register', {name, email, password});
+  const {data} = await host.post('users/register', {name, email, password});
 
   localStorage.setItem('token', data.token);
 
