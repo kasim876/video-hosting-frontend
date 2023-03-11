@@ -32,10 +32,5 @@ export const RightIcons: FC = () => {
     );
   }
 
-  return (
-    <Profile
-      username={user.name}
-      avatarPath={user.avatarPath || ''}
-    />
-  );
+  return <Profile />;
 };
