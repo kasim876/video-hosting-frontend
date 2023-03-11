@@ -15,7 +15,7 @@ export const registration = async (
   email: string,
   password: string,
 ) => {
-  const {data} = await host.post('users/register', {name, email, password});
+  const {data} = await host.post('users/registration', {name, email, password});
 
   localStorage.setItem('token', data.token);
 
