@@ -83,7 +83,7 @@ export const AuthForm = forwardRef<HTMLFormElement, Props>(
             error={errors.email}
             placeholder="E-mail"
             {...register('email', {
-              required: 'E-mail',
+              required: 'Введите e-mail',
               pattern: {
                 value: EMAIL_PATTERN,
                 message: 'Введите корректный адрес электронной почты',
@@ -95,7 +95,7 @@ export const AuthForm = forwardRef<HTMLFormElement, Props>(
             placeholder="Пароль"
             type="password"
             {...register('password', {
-              required: 'Пароль',
+              required: 'Введите пароль',
               minLength: {
                 value: 6,
                 message: 'Минимальная длина пароля - 6 символов',
