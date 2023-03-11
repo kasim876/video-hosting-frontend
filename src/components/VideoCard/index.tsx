@@ -1,58 +1,59 @@
+import cn from 'clsx';
 import {FC} from 'react';
 import {Link} from 'react-router-dom';
 
-import {formatNumberToK} from '@/utils/format-number-to-k';
+import {UserAvatar} from '@components/UserAvatar';
+import {VideoStatistics} from '@components/VideoCard/VideoStatistics';
+
+import {IVideo} from '@/types/video';
 
 import classes from './VideoCard.module.scss';
 
-type Props = {
-  avatar: string;
-  title: string;
-  name: string;
-  thumbnail: string;
-  link: string;
-  views: number;
-  date: string;
-};
+interface IVideoCard {
+  video: IVideo;
+  isSmall?: boolean;
+}
 
-export const VideoCard: FC<Props> = ({
-  avatar,
-  title,
-  thumbnail,
-  link,
-  name,
-  views,
-  date,
-}) => {
+export const VideoCard: FC<IVideoCard> = ({video, isSmall}) => {
+  /* TODO: Удалить функцию */
+  const testViews = () => {
+    const rand = 1 + Math.random() * (12000000 - 1);
+    return Math.round(rand);
+  };
+
   return (
-    <Link
-      className={classes.root}
-      aria-label={title}
-      title={title}
-      to={link}
-    >
-      <img
-        className={classes.img}
-        src={thumbnail}
-        alt=""
-      />
-      <div className={classes.details}>
-        <h3 className={classes.title}>{title}</h3>
-        <div className={classes.author}>
-          <img
-            className={classes.avatar}
-            src={avatar}
-            alt=""
-          />
-          <span className={classes.name}>{name}</span>
-        </div>
-        <ul className={classes.metadata}>
-          <li className={classes.metadataItem}>
-            {formatNumberToK(views)} просмотров
-          </li>
-          <li className={classes.metadataItem}>{date} назад</li>
-        </ul>
+    <div className={cn(classes.root, isSmall && classes.small)}>
+      <div className={classes.thumbnail}>
+        <img
+          className={classes.thumbnail}
+          src={process.env.REACT_APP_API + video.thumbnailName}
+          alt=""
+        />
+        {video.userAvatar && (
+          <div className={classes.avatar}>
+            <UserAvatar
+              userId={video.userId}
+              userAvatar={video.userAvatar}
+            />
+          </div>
+        )}
       </div>
-    </Link>
+      <div className={classes.information}>
+        <div className={classes.author}>{video.userName}</div>
+        <h3 className={classes.title}>
+          <Link
+            to={process.env.REACT_APP_API + video.videoName}
+            aria-label={video.title}
+            title={video.title}
+          >
+            {video.title}
+          </Link>
+        </h3>
+        <VideoStatistics
+          views={testViews()}
+          createdAt={video.createdAt}
+        />
+      </div>
+    </div>
   );
 };
