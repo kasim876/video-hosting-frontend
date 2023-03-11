@@ -1,26 +1,25 @@
 import {FC} from 'react';
 import {HiOutlineUserCircle} from 'react-icons/hi';
 
+import {useAuth} from '@hooks/useAuth';
+
 import classes from './Profile.module.scss';
 
-type Props = {
-  username: string;
-  avatarPath: string;
-};
+export const Profile: FC = () => {
+  const {user} = useAuth();
 
-export const Profile: FC<Props> = ({username, avatarPath}) => {
   return (
     <button className={classes.root}>
-      {avatarPath ? (
+      {user?.avatar ? (
         <img
-          src={avatarPath}
+          src={process.env.REACT_APP_API + user?.avatar}
           className={classes.avatar}
-          alt={'Пользователь ' + username}
+          alt={'Пользователь ' + user?.name}
         />
       ) : (
         <HiOutlineUserCircle className={classes.icon} />
       )}
-      <b>{username}</b>
+      <b>{user?.name}</b>
     </button>
   );
 };
