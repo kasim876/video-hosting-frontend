@@ -1,13 +1,15 @@
-interface IVideo {
+export interface IVideo {
+  userId: number;
+  userName: string;
+  userAvatar: string;
+  id: number;
   title: string;
-  autor: string;
-  views: number;
-  likes: number;
-  path: string;
-  thumbnail: string;
-  date: string;
+  videoName: string;
+  thumbnailName: string;
+  createdAt: string;
 }
 
 export interface IVideoState {
+  loading: boolean;
   videos: IVideo[] | null;
 }
