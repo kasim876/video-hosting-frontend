@@ -1,6 +1,6 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 
-import {IVideoState} from '@/types/video';
+import {IVideo, IVideoState} from '@/types/video';
 
 const initialState: IVideoState = {
   loading: false,
@@ -11,16 +11,16 @@ export const videoSlice = createSlice({
   name: 'video',
   initialState,
   reducers: {
-    fetchVideos: state => {
+    loadingVideos: state => {
       state.loading = true;
     },
-    fetchVideosSuccess: (state, action: PayloadAction<IVideoState>) => {
+    loadingVideosSuccess: (state, action: PayloadAction<IVideo[]>) => {
       state.loading = false;
-      state.videos = action.payload.videos;
+      state.videos = action.payload;
     },
   },
 });
 
-export const {fetchVideos, fetchVideosSuccess} = videoSlice.actions;
+export const {loadingVideos, loadingVideosSuccess} = videoSlice.actions;
 
 export default videoSlice.reducer;
