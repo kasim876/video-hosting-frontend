@@ -1,4 +1,4 @@
-export interface IUserState {
+export interface IAuthData {
   user: {
     id: number;
     name: string;
