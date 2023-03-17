@@ -8,6 +8,7 @@
   "bracketSpacing": false,
   "bracketSameLine": false,
   "singleAttributePerLine": true,
+  "printWidth": 120,
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
     "^@hooks/(.*)$",
