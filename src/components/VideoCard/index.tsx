@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {UserAvatar} from '@components/UserAvatar';
 import {VideoStatistics} from '@components/VideoCard/VideoStatistics';
 
-import {IVideo} from '@/types/video';
+import {IVideo} from '@/types/video.interface';
 
 import classes from './VideoCard.module.scss';
 
@@ -26,27 +26,27 @@ export const VideoCard: FC<IVideoCard> = ({video, isSmall}) => {
       <div className={classes.thumbnail}>
         <img
           className={classes.thumbnail}
-          src={process.env.REACT_APP_API + video.thumbnailName}
+          src={process.env.REACT_APP_API + video.thumbnailPath}
           alt=""
         />
-        {video.userAvatar && (
+        {video.user.avatarPath && (
           <div className={classes.avatar}>
             <UserAvatar
-              userId={video.userId}
-              userAvatar={video.userAvatar}
+              userId={video.user.id}
+              userAvatar={video.user.avatarPath}
             />
           </div>
         )}
       </div>
       <div className={classes.information}>
-        <div className={classes.author}>{video.userName}</div>
+        <div className={classes.author}>{video.user.name}</div>
         <h3 className={classes.title}>
           <Link
-            to={process.env.REACT_APP_API + video.videoName}
-            aria-label={video.title}
-            title={video.title}
+            to={process.env.REACT_APP_API + video.videoPath}
+            aria-label={video.name}
+            title={video.name}
           >
-            {video.title}
+            {video.name}
           </Link>
         </h3>
         <VideoStatistics
