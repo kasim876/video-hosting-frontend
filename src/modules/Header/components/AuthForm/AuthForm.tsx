@@ -3,6 +3,7 @@ import {SubmitHandler, useForm} from 'react-hook-form';
 
 import {useAppDispatch} from '@/hooks/useAppDispatch';
 import {EMAIL_PATTERN} from '@/modules/Header/consts';
+import {login as loginAction, register as registerAction} from '@/store/auth/auth.actions';
 import {IAuthFields} from '@/types/auth.interface';
 import {ButtonSolid} from '@/ui/ButtonSolid';
 
@@ -28,7 +29,11 @@ export const AuthForm = forwardRef<HTMLFormElement, IAuthForm>(({type, setIsShow
   });
 
   const onSubmit: SubmitHandler<IAuthFields> = async data => {
-    console.log(data);
+    if (type === 'login') {
+      dispatch(loginAction(data));
+    } else {
+      dispatch(registerAction(data));
+    }
   };
 
   return (

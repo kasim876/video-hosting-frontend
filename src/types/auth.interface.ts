@@ -1,7 +1,7 @@
 export interface IAuthFields {
   email: string;
-  password: string;
   name: string;
+  password: string;
 }
 
 export interface IAuthData {
@@ -11,4 +11,8 @@ export interface IAuthData {
     email: string;
   } | null;
   accessToken: string | null;
+}
+
+export interface IAuthState extends IAuthData {
+  loading: boolean;
 }

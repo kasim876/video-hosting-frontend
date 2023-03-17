@@ -10,16 +10,16 @@ export const Profile: FC = () => {
 
   return (
     <button className={classes.root}>
-      {user?.avatar ? (
-        <img
-          src={process.env.REACT_APP_API + user?.avatar}
+      {/* <img
+          src={process.env.REACT_APP_API}
           className={classes.avatar}
           alt={'Пользователь ' + user?.name}
-        />
-      ) : (
-        <HiOutlineUserCircle className={classes.icon} />
-      )}
-      <b>{user?.name}</b>
+        /> */}
+      {/* TODO: заменить на вывод имени с аватаром */}
+      <HiOutlineUserCircle className={classes.icon} />
+      <b>
+        Профиль с email <i>{user?.email}</i> получен
+      </b>
     </button>
   );
 };
