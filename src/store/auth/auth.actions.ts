@@ -35,3 +35,7 @@ export const login = createAsyncThunk<IAuthData, IAuthFields>(
     }
   },
 );
+
+export const logout = createAsyncThunk<any, any>('auth/logout', async () => {
+  return {};
+});

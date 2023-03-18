@@ -1,17 +1,20 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 
-import {store} from '@store/store';
+import {persistor, store} from '@/store/store';
 
 import App from './App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('appMountPoint') as HTMLElement,
-);
+const root = ReactDOM.createRoot(document.getElementById('appMountPoint') as HTMLElement);
 
 root.render(
   <Provider store={store}>
-    <App />
+    <PersistGate
+      persistor={persistor}
+      loading={null}
+    >
+      <App />
+    </PersistGate>
   </Provider>,
 );

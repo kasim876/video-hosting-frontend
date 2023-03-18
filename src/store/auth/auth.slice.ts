@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 import {IAuthState} from '@/types/auth.interface';
 
-import {login, register} from './auth.actions';
+import {login, logout, register} from './auth.actions';
 
 const initialState: IAuthState = {
   user: null,
@@ -41,8 +41,11 @@ export const authSlice = createSlice({
         state.user = null;
         state.accessToken = '';
         state.loading = false;
+      })
+      .addCase(logout.fulfilled, state => {
+        state.user = null;
+        state.accessToken = '';
+        state.loading = false;
       });
   },
 });
-
-export default authSlice.reducer;

@@ -23,18 +23,14 @@ export const MenuItem: FC<Props> = ({item}) => {
     <li className={classes.root}>
       <NavLink
         to={item.link === '/my-channel' ? `/channel/${user?.id}` : item.link}
-        className={({isActive}) =>
-          cn(classes.link, isActive && classes.linkActive)
-        }
+        className={({isActive}) => cn(classes.link, isActive && classes.linkActive)}
         end
       >
-        <span
-          className={cn(item.icon && classes.icon, item.image && classes.image)}
-        >
+        <span className={cn(item.icon && classes.icon, item.image && classes.image)}>
           {item.icon && <item.icon />}
           {item.image && (
             <img
-              src={item.image}
+              src={process.env.REACT_APP_API + item.image}
               width={40}
               height={40}
               alt={item.title}

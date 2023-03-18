@@ -8,6 +8,6 @@ export interface IMenuItem {
 }
 
 export interface IMenu {
-  title: string;
+  title?: string;
   list: IMenuItem[];
 }

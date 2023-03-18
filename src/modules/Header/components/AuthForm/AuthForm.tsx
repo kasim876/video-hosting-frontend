@@ -34,6 +34,8 @@ export const AuthForm = forwardRef<HTMLFormElement, IAuthForm>(({type, setIsShow
     } else {
       dispatch(registerAction(data));
     }
+
+    setIsShow(false);
   };
 
   return (
