@@ -2,9 +2,8 @@ import cn from 'clsx';
 import {FC} from 'react';
 import {Link} from 'react-router-dom';
 
-import {UserAvatar} from '@components/UserAvatar';
-import {VideoStatistics} from '@components/VideoCard/VideoStatistics';
-
+import {UserAvatar} from '@/components/UserAvatar';
+import {VideoStatistics} from '@/components/VideoCard/VideoStatistics';
 import {IVideo} from '@/types/video.interface';
 
 import classes from './VideoCard.module.scss';
@@ -15,12 +14,6 @@ interface IVideoCard {
 }
 
 export const VideoCard: FC<IVideoCard> = ({video, isSmall}) => {
-  /* TODO: Удалить функцию */
-  const testViews = () => {
-    const rand = 1 + Math.random() * (12000000 - 1);
-    return Math.round(rand);
-  };
-
   return (
     <div className={cn(classes.root, isSmall && classes.small)}>
       <div className={classes.thumbnail}>
@@ -50,7 +43,7 @@ export const VideoCard: FC<IVideoCard> = ({video, isSmall}) => {
           </Link>
         </h3>
         <VideoStatistics
-          views={testViews()}
+          views={video.views}
           createdAt={video.createdAt}
         />
       </div>

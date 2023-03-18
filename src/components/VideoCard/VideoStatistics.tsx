@@ -18,12 +18,13 @@ interface IVideoStatistics {
 export const VideoStatistics: FC<IVideoStatistics> = ({views, createdAt}) => {
   return (
     <div className={classes.metadata}>
-      <div className={classes.metadataItem}>
+      <div
+        className={classes.metadataItem}
+        aria-label={`${views} просмотров`}
+      >
         {formatNumberToK(views)} просмотров
       </div>
-      <div className={classes.metadataItem}>
-        {dayjs(new Date(createdAt)).fromNow()}
-      </div>
+      <div className={classes.metadataItem}>{dayjs(new Date(createdAt)).fromNow()}</div>
     </div>
   );
 };

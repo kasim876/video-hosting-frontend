@@ -10,7 +10,7 @@ interface IUserAvatar {
 
 export const UserAvatar: FC<IUserAvatar> = ({userId, userAvatar}) => {
   return (
-    <Link to={`/c/${userId}`}>
+    <Link to={`/channel/${userId}`}>
       <span className={classes.root}>
         <img
           src={process.env.REACT_APP_API + userAvatar}
