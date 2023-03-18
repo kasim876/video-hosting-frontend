@@ -21,6 +21,7 @@ export const api = createApi({
     getProfile: builder.query<IUser, any>({
       query: () => 'user/profile',
       providesTags: () => [{type: 'Profile'}],
+      keepUnusedDataFor: 0,
     }),
   }),
 });
