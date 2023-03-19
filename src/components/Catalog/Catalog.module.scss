@@ -1,0 +1,23 @@
+@import '/src/assets/styles/mixins.scss';
+
+.root {
+  padding: rem(30) rem(15);
+}
+
+.topBlock {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(30);
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  > div {
+    flex: 1 1 calc((100% / 4) - 2rem);
+    margin-bottom: 10px;
+    width: 23%;
+  }
+}

@@ -1,0 +1,8 @@
+@import '/src/assets/styles/mixins.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  font-size: rem(36);
+  color: var(--primary-text);
+}
