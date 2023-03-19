@@ -9,7 +9,13 @@ export const VideoService = {
   },
 
   async getOne(id: number) {
-    const response = await $host.get<IVideo>(`video/${id}`);
+    const response = await $host.get<IVideo>(`video/by-id/${id}`);
+
+    return response.data;
+  },
+
+  async getMostPopular() {
+    const response = await $host.get<IVideo[]>('video/most-popular');
 
     return response.data;
   },
