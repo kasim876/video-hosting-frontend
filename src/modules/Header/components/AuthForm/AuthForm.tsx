@@ -6,8 +6,7 @@ import {EMAIL_PATTERN} from '@/modules/Header/consts';
 import {login as loginAction, register as registerAction} from '@/store/auth/auth.actions';
 import {IAuthFields} from '@/types/auth.interface';
 import {ButtonSolid} from '@/ui/ButtonSolid';
-
-import AuthField from '../AuthField/AuthField';
+import Field from '@/ui/Field';
 
 import classes from './AuthForm.module.scss';
 
@@ -46,7 +45,7 @@ export const AuthForm = forwardRef<HTMLFormElement, IAuthForm>(({type, setIsShow
         ref={ref}
       >
         {type === 'register' && (
-          <AuthField
+          <Field
             error={errors.name}
             placeholder="Имя"
             {...register('name', {
@@ -58,7 +57,7 @@ export const AuthForm = forwardRef<HTMLFormElement, IAuthForm>(({type, setIsShow
             })}
           />
         )}
-        <AuthField
+        <Field
           error={errors.email}
           placeholder="E-mail"
           {...register('email', {
@@ -69,7 +68,7 @@ export const AuthForm = forwardRef<HTMLFormElement, IAuthForm>(({type, setIsShow
             },
           })}
         />
-        <AuthField
+        <Field
           error={errors.password}
           placeholder="Пароль"
           type="password"

@@ -1,6 +1,8 @@
 @import '/src/assets/styles/mixins.scss';
 
 .root {
+  width: 100%;
+
   &:not(:last-child) {
     margin-bottom: rem(10);
   }
