@@ -1,0 +1,87 @@
+@import '/src/assets/styles/mixins.scss';
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: rem(16);
+
+  @include hover {
+    .controls {
+      bottom: 20px;
+    }
+  }
+}
+
+:fullscreen .wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.player {
+  display: block;
+  width: 100%;
+}
+
+.controls {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: rem(10);
+  padding: rem(10) rem(20);
+  width: calc(100% - 20px);
+  background: var(--secondary-bg);
+  transition: bottom 0.25s ease-in-out;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-text);
+  }
+}
+
+.progressBarWrapper {
+  flex-grow: 1;
+  overflow: hidden;
+  margin: 0 rem(15);
+  border-radius: rem(4);
+  height: 6px;
+  background-color: var(--primary-bg);
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--white);
+}
+
+.timeDisplay {
+  display: flex;
+  align-items: center;
+  margin-right: rem(15);
+  color: var(--primary-text);
+
+  > p {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 150%;
+  }
+
+  > p:not(:last-child) {
+    &::after {
+      content: '/';
+      display: block;
+      margin: 0 rem(8);
+    }
+  }
+}

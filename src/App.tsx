@@ -13,12 +13,7 @@ const App: FC = () => {
     <BrowserRouter>
       <Sidebar />
       <Header />
-      <main
-        style={{
-          marginLeft: 'var(--menu-width)',
-          marginTop: 'var(--header-height)',
-        }}
-      >
+      <main className="main">
         <Routes>
           {ROUTES.map(({path, element}) => (
             <Route

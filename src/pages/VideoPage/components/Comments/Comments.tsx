@@ -7,7 +7,7 @@ import {AddCommentForm} from './AddCommentForm';
 import {CommentItem} from './CommentItem';
 import classes from './Comments.module.scss';
 
-export const Comments: FC<{comments: IComment[]}> = ({comments}) => {
+const Comments: FC<{comments: IComment[]}> = ({comments}) => {
   const {user} = useAuth();
 
   return (
@@ -30,3 +30,5 @@ export const Comments: FC<{comments: IComment[]}> = ({comments}) => {
     </div>
   );
 };
+
+export default Comments;

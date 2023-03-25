@@ -1,7 +1,8 @@
-import {HOME_ROUTE, TRENDING_ROUTE} from '@/consts';
+import {HOME_ROUTE, TRENDING_ROUTE, VIDEO_ROUTE} from '@/consts';
 import {HomePage} from '@/pages/HomePage/HomePage';
 
 import {TrendingPage} from './pages/TrendingPage/TrendingPage';
+import VideoPage from './pages/VideoPage';
 
 export const ROUTES = [
   {
@@ -11,5 +12,9 @@ export const ROUTES = [
   {
     path: TRENDING_ROUTE,
     element: <TrendingPage />,
+  },
+  {
+    path: VIDEO_ROUTE + '/:id',
+    element: <VideoPage />,
   },
 ];

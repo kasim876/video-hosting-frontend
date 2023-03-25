@@ -7,3 +7,7 @@ export interface IComment extends IBase {
   video: IVideo;
   message: string;
 }
+
+export interface ICommentDto extends Pick<IComment, 'message'> {
+  videoId: number;
+}

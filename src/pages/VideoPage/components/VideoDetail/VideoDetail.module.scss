@@ -1,0 +1,76 @@
+@import '/src/assets/styles/mixins.scss';
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: rem(40);
+
+  > div:first-child {
+    flex-basis: 66%;
+    margin-right: rem(20);
+  }
+
+  > div:last-child {
+    flex-basis: 33%;
+  }
+
+  h1 {
+    margin: rem(20) 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--primary-text);
+  }
+
+  .article {
+    font-size: 1rem;
+    color: var(--primary-text);
+  }
+
+  .wrapperButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(30);
+
+    > button:first-child {
+      width: 54%;
+    }
+
+    > button:last-child {
+      width: 40%;
+    }
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: rem(10);
+      padding: rem(10);
+
+      > svg {
+        flex-shrink: 0;
+        margin-right: rem(8);
+        font-size: 1.25rem;
+      }
+
+      &.likeButton {
+        color: var(--primary-text);
+        background-color: var(--secondary-bg);
+      }
+    }
+  }
+
+  .numberInfo {
+    > div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: var(--secondary-text);
+
+      svg {
+        margin-right: rem(8);
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import {UserAvatar} from '@/components/UserAvatar';
 import {VideoStatistics} from '@/components/VideoCard/VideoStatistics';
+import {VIDEO_ROUTE} from '@/consts';
 import {IVideo} from '@/types/video.interface';
 
 import classes from './VideoCard.module.scss';
@@ -35,7 +36,7 @@ export const VideoCard: FC<IVideoCard> = ({video, isSmall}) => {
         <div className={classes.author}>{video.user.name}</div>
         <h3 className={classes.title}>
           <Link
-            to={process.env.REACT_APP_API + video.videoPath}
+            to={VIDEO_ROUTE + '/' + video.id}
             aria-label={video.name}
             title={video.name}
           >

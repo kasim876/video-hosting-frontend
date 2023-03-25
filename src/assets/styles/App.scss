@@ -81,3 +81,9 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+
+.main {
+  margin-top: var(--header-height);
+  margin-left: var(--menu-width);
+  padding: rem(30) rem(15);
+}

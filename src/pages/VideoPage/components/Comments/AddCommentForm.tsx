@@ -2,6 +2,7 @@ import {FC} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {MdSend} from 'react-icons/md';
 
+import {ICommentDto} from '@/types/comment.interface';
 import Field from '@/ui/Field';
 
 import classes from './Comments.module.scss';
@@ -12,13 +13,20 @@ export const AddCommentForm: FC = () => {
     formState: {errors},
     handleSubmit,
     reset,
-  } = useForm<any>({mode: 'onSubmit'});
+  } = useForm<ICommentDto>({mode: 'onSubmit'});
 
-  const onSubmit: SubmitHandler<any> = async data => {};
+  const onSubmit: SubmitHandler<ICommentDto> = async data => {
+    console.log(data);
+    reset();
+  };
 
   return (
-    <form className={classes.form}>
+    <form
+      className={classes.form}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Field
+        error={errors.message}
         placeholder="Введите комментарий"
         {...register('message', {
           required: 'Введите сообщение',

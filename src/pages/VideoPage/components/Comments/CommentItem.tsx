@@ -2,7 +2,7 @@ import {FC} from 'react';
 
 import {IComment} from '@/types/comment.interface';
 
-import {UserAvatar} from '../UserAvatar';
+import {UserAvatar} from '../../../../components/UserAvatar';
 
 import classes from './Comments.module.scss';
 
