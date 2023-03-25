@@ -1,0 +1,11 @@
+@import '/src/assets/styles/mixins.scss';
+
+.subscribed {
+  border-color: var(--secondary-bg);
+  background-color: var(--secondary-bg);
+
+  @include hover {
+    color: var(--primary-text);
+    background-color: var(--secondary-bg);
+  }
+}
