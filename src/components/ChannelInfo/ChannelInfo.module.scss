@@ -1,0 +1,22 @@
+@import '/src/assets/styles/mixins.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+
+  > div:last-child {
+    margin-left: rem(10);
+  }
+}
+
+.author {
+  display: block;
+  margin-bottom: rem(5);
+  font-size: 1rem;
+  color: var(--primary-text);
+}
+
+.info {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
