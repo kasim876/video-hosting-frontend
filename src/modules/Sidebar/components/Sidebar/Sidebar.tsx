@@ -20,7 +20,7 @@ export const Sidebar: FC = () => {
 
   if (data?.subscriptions)
     subscriptions = data?.subscriptions.map<IMenuItem>(sub => ({
-      link: `/channel/${sub.id}`,
+      link: `/channel/${sub.toChannel.id}`,
       title: sub.toChannel.name,
       image: sub.toChannel.avatarPath,
     }));
