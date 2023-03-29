@@ -1,0 +1,7 @@
+.root {
+  @apply block border-solid border-primary border-2 rounded-lg py-2 px-7 text-tiny text-white bg-primary transition-colors duration-500;
+
+  &:hover {
+    @apply text-primary bg-transparent;
+  }
+}
