@@ -60,6 +60,7 @@ input {
   -webkit-appearance: none;
   appearance: none;
   display: inline-block;
+  font-family: inherit;
   border: none;
   border-radius: 0;
   padding: 0;
@@ -81,6 +82,7 @@ button {
   display: inline-block;
   border: none;
   border-radius: 0;
+  font-family: inherit;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
