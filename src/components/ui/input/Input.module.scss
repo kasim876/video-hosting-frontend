@@ -1,0 +1,12 @@
+.root {
+  @apply block rounded-lg px-4 py-1 w-full h-12 text-tiny text-white;
+  border: 1px solid #363440;
+
+  &::placeholder {
+    @apply pl-1;
+  }
+
+  &:focus {
+    background-color: #363440;
+  }
+}
