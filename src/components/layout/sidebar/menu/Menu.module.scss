@@ -1,0 +1,49 @@
+.root {
+  @apply my-8;
+
+  &:not(:last-child) {
+    &::after {
+      @apply block h-0.5 my-8 bg-stone-600 opacity-40;
+      content: '';
+    }
+  }
+}
+
+.list {
+  @apply space-y-10;
+}
+
+.link {
+  @apply relative flex items-center text-tiny text-gray-500 font-medium;
+
+  &.active {
+    @apply text-white pointer-events-none;
+
+    > span {
+      @apply bg-primary;
+    }
+  }
+
+  &::before {
+    @apply absolute top-0 -left-7 w-1 h-full rounded-lg bg-primary -translate-x-1 opacity-0 transition-all duration-500;
+    content: '';
+  }
+
+  &:hover::before {
+    @apply opacity-100 translate-x-0;
+  }
+}
+
+.icon {
+  @apply flex items-center justify-center mr-4 rounded-xl w-10 h-10;
+  background-color: #363440;
+  transition: background-color 0.25s ease-in-out;
+
+  svg {
+    @apply w-6 h-6;
+  }
+}
+
+.image {
+  @apply flex items-center justify-center mr-4 rounded-xl overflow-hidden w-10 h-10;
+}

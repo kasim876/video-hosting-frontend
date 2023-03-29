@@ -1,0 +1,44 @@
+import cn from 'clsx';
+import Image from 'next/image';
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import {FC} from 'react';
+
+import useAuth from '@/hooks/useAuth';
+
+import classes from './Menu.module.scss';
+import {IMenuItem} from './menu.interface';
+
+const MenuItem: FC<{item: IMenuItem}> = ({item}) => {
+  const {user} = useAuth();
+
+  const {asPath} = useRouter();
+
+  if (item.link === '/my-channel')
+    if (!user) return null;
+    else item.link = `/c/${user.id}`;
+
+  return (
+    <li className={classes.item}>
+      <Link
+        href={item.link}
+        className={cn(asPath === item.link && classes.active, classes.link)}
+      >
+        <span className={item.icon ? classes.icon : classes.image}>
+          {item.icon && <item.icon />}
+          {item.image && (
+            <Image
+              src={process.env.REACT_APP_API + item.image}
+              width={40}
+              height={40}
+              alt={item.title}
+            />
+          )}
+        </span>
+        <b className={classes.name}>{item.title}</b>
+      </Link>
+    </li>
+  );
+};
+
+export default MenuItem;
