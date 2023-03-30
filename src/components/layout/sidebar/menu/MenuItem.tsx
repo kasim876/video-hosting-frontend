@@ -1,4 +1,4 @@
-import cn from 'clsx';
+import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
@@ -11,18 +11,17 @@ import {IMenuItem} from './menu.interface';
 
 const MenuItem: FC<{item: IMenuItem}> = ({item}) => {
   const {user} = useAuth();
-
   const {asPath} = useRouter();
 
-  if (item.link === '/my-channel')
-    if (!user) return null;
-    else item.link = `/c/${user.id}`;
+  if (!user) {
+    if (item.link === '/my-channel') return null;
+  }
 
   return (
     <li className={classes.item}>
       <Link
         href={item.link}
-        className={cn(asPath === item.link && classes.active, classes.link)}
+        className={classNames(asPath === item.link && classes.active, classes.link)}
       >
         <span className={item.icon ? classes.icon : classes.image}>
           {item.icon && <item.icon />}

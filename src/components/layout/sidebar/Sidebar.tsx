@@ -1,6 +1,10 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import {FC} from 'react';
 
 import useAuth from '@/hooks/useAuth';
+
+import logo from '@/assets/images/logo.svg';
 
 import classes from './Sidebar.module.scss';
 import Menu from './menu/Menu';
@@ -11,8 +15,22 @@ const Sidebar: FC = () => {
 
   return (
     <aside className={classes.root}>
-      <Menu list={menu} />
-      <Menu list={categories} />
+      <Link href="/">
+        <Image
+          src={logo}
+          width={215}
+          height={43}
+          alt="rutube"
+        />
+      </Link>
+      <Menu
+        list={menu}
+        title="меню"
+      />
+      <Menu
+        list={categories}
+        title="категории"
+      />
     </aside>
   );
 };

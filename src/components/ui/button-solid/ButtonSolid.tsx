@@ -1,4 +1,4 @@
-import cn from 'clsx';
+import classNames from 'classnames';
 import {ButtonHTMLAttributes, PropsWithChildren, forwardRef} from 'react';
 
 import classes from './ButtonSolid.module.scss';
@@ -7,7 +7,7 @@ const ButtonSolid = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonHTMLAt
   ({children, className, ...props}, ref) => {
     return (
       <button
-        className={cn(classes.root, className)}
+        className={classNames(classes.root, className)}
         ref={ref}
         {...props}
       >

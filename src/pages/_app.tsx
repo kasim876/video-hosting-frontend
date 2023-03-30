@@ -1,10 +1,11 @@
 import type {AppProps} from 'next/app';
+import NextProgressBar from 'nextjs-progressbar';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 
 import store, {persistor} from '@/store/store';
 
-import '@/styles/App.scss';
+import '@/styles/globals.scss';
 
 export default function App({Component, pageProps}: AppProps) {
   return (
@@ -13,6 +14,10 @@ export default function App({Component, pageProps}: AppProps) {
         persistor={persistor}
         loading={null}
       >
+        <NextProgressBar
+          height={2}
+          color="#ff7652"
+        />
         <Component {...pageProps} />
       </PersistGate>
     </Provider>

@@ -1,4 +1,4 @@
-import cn from 'clsx';
+import classNames from 'classnames';
 import {ButtonHTMLAttributes, FC, PropsWithChildren, forwardRef} from 'react';
 
 import classes from './ButtonOutlined.module.scss';
@@ -7,7 +7,7 @@ const ButtonOutlined = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonHTM
   ({children, className, ...props}, ref) => {
     return (
       <button
-        className={cn(classes.root, className)}
+        className={classNames(classes.root, className)}
         ref={ref}
         {...props}
       >

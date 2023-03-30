@@ -1,11 +1,9 @@
-import {Inter} from 'next/font/google';
-
-import Meta from '@/components/Meta';
+import Layout from '@/components/layout/Layout';
 
 export default function Home() {
   return (
-    <>
-      <Meta title="Главная" />
-    </>
+    <Layout title="Главная">
+      <h1 className="text-5xl">Главная</h1>
+    </Layout>
   );
 }

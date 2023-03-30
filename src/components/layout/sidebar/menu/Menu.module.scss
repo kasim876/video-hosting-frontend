@@ -9,6 +9,10 @@
   }
 }
 
+.title {
+  @apply text-gray-600 mb-7;
+}
+
 .list {
   @apply space-y-10;
 }

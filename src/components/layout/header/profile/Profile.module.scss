@@ -1,0 +1,11 @@
+.root {
+  @apply flex items-center text-tiny text-white;
+}
+
+.icon {
+  @apply mr-4 w-12 h-12;
+}
+
+.avatar {
+  @apply mr-4 rounded-full w-12 h-12;
+}
