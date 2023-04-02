@@ -20,7 +20,7 @@ const LargeVideoItem: FC<ILargeVideoItem> = ({video}) => {
       <div className={classes.thumbnail}>
         {video.thumbnailPath && (
           <Image
-            src={'/' + video.thumbnailPath}
+            src={process.env.REACT_APP_API + video.thumbnailPath}
             alt={video.name}
             className={classes.bgImage}
             fill
