@@ -6,6 +6,9 @@ const nextConfig = {
   env: {
     REACT_APP_API: process.env.REACT_APP_API,
   },
+  images: {
+    domains: ['localhost'],
+  },
 };
 
 module.exports = nextConfig;
