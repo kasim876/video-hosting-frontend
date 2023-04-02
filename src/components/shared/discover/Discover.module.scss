@@ -1,0 +1,23 @@
+.root {
+  @apply flex space-x-7 mb-10;
+}
+
+.topVideo {
+  width: 60%;
+
+  .subName {
+    @apply text-lg;
+  }
+
+  h1 {
+    @apply text-xl my-5 font-semibold;
+  }
+
+  .description {
+    @apply text-gray-500 mb-6;
+  }
+}
+
+.randomVideo {
+  width: 40%;
+}
