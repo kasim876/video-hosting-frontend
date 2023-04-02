@@ -1,0 +1,7 @@
+.root {
+  @apply flex items-center justify-center overflow-hidden border-solid border-[2px] border-white border-opacity-40 rounded-full w-12 h-12;
+
+  img {
+    @apply rounded-full;
+  }
+}
