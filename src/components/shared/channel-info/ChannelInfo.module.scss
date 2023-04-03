@@ -1,0 +1,11 @@
+.root {
+  @apply flex items-center space-x-4;
+}
+
+.author {
+  @apply text-base text-white;
+}
+
+.info {
+  @apply text-xs text-gray-500;
+}
