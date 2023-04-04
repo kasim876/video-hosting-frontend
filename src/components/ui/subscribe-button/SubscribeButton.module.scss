@@ -1,0 +1,11 @@
+.root {
+  @apply flex items-center justify-center rounded-lg h-10 px-7 text-tiny text-white bg-primary;
+
+  > svg {
+    @apply mr-2 text-base;
+  }
+}
+
+.subscribed {
+  background-color: #252836;
+}
