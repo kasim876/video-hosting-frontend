@@ -1,0 +1,47 @@
+.comments {
+  @apply relative rounded-xl p-5;
+
+  background-color: #252836;
+
+  > h2 {
+    @apply text-white text-tiny;
+  }
+
+  .line {
+    @apply w-full h-0.5 my-4;
+
+    background-color: #303241;
+  }
+
+  > p {
+    @apply text-gray-500 mb-4;
+  }
+}
+
+.commentItem {
+  @apply mt-7;
+}
+
+.author {
+  @apply text-xs text-white;
+}
+
+.message {
+  @apply text-gray-500;
+
+  font-size: 1rem;
+}
+
+.form {
+  @apply flex w-full;
+
+  > button {
+    @apply flex items-center justify-center text-xl w-12 h-12 text-white ml-3 rounded-lg shrink-0;
+
+    border: 1px solid #363440;
+  }
+}
+
+.bottomForm {
+  @apply absolute bottom-5 left-5 right-5;
+}

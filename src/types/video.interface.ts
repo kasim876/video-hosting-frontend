@@ -6,6 +6,7 @@ export interface IVideo extends IBase {
   name: string;
   views: number;
   likes: number;
+  description: string;
   videoPath: string;
   thumbnailPath: string;
   user: IUser;

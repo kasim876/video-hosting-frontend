@@ -1,0 +1,7 @@
+.wrapper {
+  @apply relative flex overflow-hidden rounded-lg;
+
+  > div {
+    @apply w-full h-auto aspect-video;
+  }
+}
