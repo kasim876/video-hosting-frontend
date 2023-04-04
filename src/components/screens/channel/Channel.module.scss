@@ -1,0 +1,9 @@
+.channelInfo {
+  @apply mb-10;
+
+  max-width: rem(600);
+}
+
+.descr {
+  @apply mt-3 text-xs text-gray-500 whitespace-break-spaces;
+}
