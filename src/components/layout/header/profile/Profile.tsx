@@ -4,7 +4,9 @@ import {HiOutlineUserCircle} from 'react-icons/hi';
 import useAppDispatch from '@/hooks/useAppDispatch';
 import useAuth from '@/hooks/useAuth';
 
-import {useGetProfileQuery} from '@/store/api';
+import UserAvatar from '@/components/shared/user-avatar/UserAvatar';
+
+import {useGetProfileQuery} from '@/store/api/api';
 import {logout as logoutAction} from '@/store/auth/auth.actions';
 
 import classes from './Profile.module.scss';
@@ -14,7 +16,7 @@ const Profile: FC = () => {
 
   const {user} = useAuth();
 
-  const {data} = useGetProfileQuery(null, {
+  const {data: profile} = useGetProfileQuery(null, {
     skip: !user,
   });
 
@@ -23,16 +25,14 @@ const Profile: FC = () => {
       className={classes.root}
       onClick={() => dispatch(logoutAction(null))}
     >
-      {data?.avatarPath ? (
-        <img
-          src={'http://localhost:8080/' + data?.avatarPath}
-          className={classes.avatar}
-          alt={'Пользователь ' + user?.name}
-        />
+      {profile?.avatarPath ? (
+        <div className={classes.avatar}>
+          <UserAvatar user={profile} />
+        </div>
       ) : (
         <HiOutlineUserCircle className={classes.icon} />
       )}
-      <b>{data?.name}</b>
+      <b>{profile?.name}</b>
     </button>
   );
 };
