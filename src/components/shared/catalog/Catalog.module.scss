@@ -3,12 +3,11 @@
 }
 
 .catalog {
-  @apply flex flex-wrap gap-5;
+  @apply grid grid-cols-4 gap-5;
 
   > div {
     @apply mb-2.5;
 
-    flex: 0 1 calc((100% / 4) - 2rem);
-    width: 23%;
+    width: 100%;
   }
 }
