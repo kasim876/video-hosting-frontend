@@ -1,61 +1,12 @@
-// .root {
-//   @apply relative rounded-2xl overflow-hidden w-full text-white;
-//   background-color: #252836;
-//   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
-
-//   &.small {
-//     .information {
-//       .title {
-//         @apply mt-3;
-
-//         font-size: 1.1rem;
-//         max-height: 1.5rem;
-//         -webkit-line-clamp: 1;
-//       }
-//     }
-//   }
-// }
-
-// .thumbnail {
-//   @apply relative w-full;
-// }
-
-// .information {
-//   @apply p-4;
-// }
-
-// .author {
-//   @apply font-normal text-gray-500;
-
-//   font-size: 1.15rem;
-// }
-
-// .title {
-//   display: -webkit-box;
-//   overflow: hidden;
-//   margin: 10px 0;
-//   max-height: 3rem;
-//   font-weight: 500;
-//   font-size: 1.15rem;
-//   line-height: 1.5rem;
-//   text-overflow: ellipsis;
-//   -webkit-box-orient: vertical;
-//   -webkit-line-clamp: 2;
-// }
-
-// .metadata {
-//   @apply flex items-center;
-// }
-
 .root {
   @apply relative rounded-2xl overflow-hidden;
 
   background-color: #252836;
   box-shadow: 0 3px 12px rgba(0, 0, 0.03);
 
-  .small {
+  &.small {
     .information {
-      .name {
+      .title {
         @apply mt-3;
 
         font-size: 1.1rem;

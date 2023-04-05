@@ -1,0 +1,13 @@
+.root {
+  @apply relative max-w-2xl w-full;
+}
+
+.result {
+  @apply shadow-block rounded-lg animate-scaleIn flex flex-wrap absolute w-full z-20 p-5 mt-3 bg-gray-900 gap-4;
+
+  left: 0;
+
+  > div {
+    width: 48%;
+  }
+}

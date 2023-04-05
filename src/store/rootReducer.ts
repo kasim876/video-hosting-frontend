@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import {api} from './api';
+import {api} from './api/api';
 import authSlice from './auth/auth.slice';
 
 const rootReducer = combineReducers({
