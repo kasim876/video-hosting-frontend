@@ -1,11 +1,35 @@
-.root {
-  @apply flex items-center text-tiny text-white;
+.button {
+  @apply flex items-center;
 }
 
-.icon {
-  @apply mr-4 w-12 h-12;
+.name {
+  @apply mx-3 text-tiny text-white;
 }
 
-.avatar {
-  @apply mr-4;
+.menu {
+  @apply absolute right-7 z-20 shadow-block rounded-lg p-4 w-60;
+
+  top: 90%;
+  background-color: #272532;
+
+  > ul {
+    @apply flex flex-col items-start;
+
+    > li {
+      > a,
+      > button {
+        @apply relative block py-2.5 text-white;
+
+        &::after {
+          @apply absolute w-0 left-0 -bottom-0.5 h-0.5 bg-primary transition-all rounded-lg;
+
+          content: '';
+        }
+
+        &:hover::after {
+          @apply w-full;
+        }
+      }
+    }
+  }
 }
