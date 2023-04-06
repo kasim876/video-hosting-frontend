@@ -37,6 +37,7 @@ const AddCommentForm: FC<{videoId: number}> = ({videoId}) => {
         {...register('message', {
           required: 'Введите сообщение',
         })}
+        onKeyDown={e => e.stopPropagation()}
       />
       <button disabled={status.isLoading}>
         <MdSend />

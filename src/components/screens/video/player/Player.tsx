@@ -1,41 +1,17 @@
 import {FC, useEffect, useRef} from 'react';
-import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 
 import {IVideo} from '@/types/video.interface';
 
 import classes from './Player.module.scss';
+import {usePlayer} from './usePlayer';
 
 interface IPlayer {
   video: IVideo;
 }
 
 const Player: FC<IPlayer> = ({video}) => {
-  const videoRef = useRef<any>(null);
-  const playerRef = useRef<any>(null);
-
-  const options = {
-    controls: true,
-    autoplay: true,
-    muted: true,
-    sources: [
-      {
-        src: process.env.REACT_APP_API + video.videoPath,
-        type: 'video/mp4',
-      },
-    ],
-  };
-
-  useEffect(() => {
-    const player = playerRef.current;
-
-    if (!player) {
-      const videoElement = videoRef.current;
-      if (!videoElement) return;
-
-      playerRef.current = videojs(videoElement, options);
-    }
-  }, []);
+  const {playerRef, videoRef} = usePlayer(video);
 
   return (
     <div className={classes.wrapper}>
