@@ -4,6 +4,10 @@
   max-width: rem(600);
 }
 
-.descr {
+.article {
   @apply mt-3 text-xs text-gray-500 whitespace-break-spaces;
+
+  a {
+    @apply text-purple;
+  }
 }

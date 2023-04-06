@@ -9,6 +9,7 @@ import ChannelInfo from '@/components/shared/channel-info/ChannelInfo';
 import SubscribeButton from '@/components/ui/subscribe-button/SubscribeButton';
 
 import {formatNumberToK} from '@/utils/format-number-to-k';
+import {linkify} from '@/utils/linkify';
 
 import {IVideo} from '@/types/video.interface';
 
@@ -27,7 +28,10 @@ const VideoDetail: FC<IVideoDetail> = ({video}) => {
       <div>
         <ChannelInfo user={video.user} />
         <h1>{video.name}</h1>
-        <article className={classes.article}>{video.description}</article>
+        <article
+          className={classes.article}
+          dangerouslySetInnerHTML={{__html: linkify(video.description)}}
+        />
       </div>
       <div>
         <div className={classes.wrapperButton}>

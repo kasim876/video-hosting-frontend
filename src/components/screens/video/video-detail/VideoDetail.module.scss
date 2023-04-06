@@ -11,6 +11,10 @@
 
   .article {
     @apply text-xs text-gray-500 whitespace-break-spaces;
+
+    a {
+      @apply text-purple;
+    }
   }
 
   .wrapperButton {
