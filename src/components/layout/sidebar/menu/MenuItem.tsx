@@ -17,17 +17,19 @@ const MenuItem: FC<{item: IMenuItem}> = ({item}) => {
     if (item.link === '/my-channel') return null;
   }
 
+  const computedLink = item.link === '/my-channel' ? `/c/${user.id}` : item.link;
+
   return (
     <li className={classes.item}>
       <Link
-        href={item.link}
-        className={classNames(asPath === item.link && classes.active, classes.link)}
+        href={computedLink}
+        className={classNames(asPath === computedLink && classes.active, classes.link)}
       >
         <span className={item.icon ? classes.icon : classes.image}>
           {item.icon && <item.icon />}
           {item.image && (
             <Image
-              src={process.env.REACT_APP_API + item.image}
+              src={item.image}
               width={40}
               height={40}
               alt={item.title}
