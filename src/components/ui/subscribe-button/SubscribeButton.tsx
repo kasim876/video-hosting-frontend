@@ -1,18 +1,37 @@
 import classNames from 'classnames';
-import {FC, useState} from 'react';
+import {FC} from 'react';
 import {BsPersonPlusFill} from 'react-icons/bs';
 
-import ButtonSolid from '../button-solid/ButtonSolid';
+import useAuth from '@/hooks/useAuth';
+
+import {useGetProfileQuery, useSubscribeToChannelMutation} from '@/store/api/api';
+
+import {IUser} from '@/types/user.interface';
 
 import classes from './SubscribeButton.module.scss';
 
-const SubscribeButton: FC = () => {
-  const [isSub, setIsSub] = useState(false);
+interface ISubscribeButton {
+  toChannel: IUser;
+}
+
+const SubscribeButton: FC<ISubscribeButton> = ({toChannel}) => {
+  const {user} = useAuth();
+
+  const {data} = useGetProfileQuery(null, {
+    skip: !user,
+  });
+
+  const [subscribe, {isLoading}] = useSubscribeToChannelMutation();
+
+  if (user.id === toChannel.id) return null;
+
+  const isSub = data?.subscriptions?.find(sub => sub.toChannel.id === toChannel.id);
 
   return (
     <button
       className={classNames(classes.root, isSub && classes.subscribed)}
-      onClick={() => setIsSub(!isSub)}
+      disabled={isLoading}
+      onClick={() => subscribe(toChannel.id)}
     >
       <BsPersonPlusFill />
       <span>{isSub ? 'Вы подрисаны' : 'Подписаться'}</span>

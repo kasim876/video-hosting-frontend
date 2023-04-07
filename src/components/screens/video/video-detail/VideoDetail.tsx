@@ -35,7 +35,7 @@ const VideoDetail: FC<IVideoDetail> = ({video}) => {
       </div>
       <div>
         <div className={classes.wrapperButton}>
-          <SubscribeButton />
+          <SubscribeButton toChannel={video.user} />
           <button className={classes.likeButton}>
             <AiFillHeart />
           </button>

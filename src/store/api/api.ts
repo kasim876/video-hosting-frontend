@@ -32,4 +32,4 @@ export const api = createApi({
   }),
 });
 
-export const {useGetProfileQuery} = api;
+export const {useGetProfileQuery, useSubscribeToChannelMutation} = api;
