@@ -1,0 +1,14 @@
+.root {
+  > textarea {
+    @apply block rounded-lg px-4 py-4 w-full text-tiny text-white;
+    border: 1px solid #363440;
+
+    &::placeholder {
+      @apply pl-1;
+    }
+
+    &:focus {
+      background-color: #363440;
+    }
+  }
+}
