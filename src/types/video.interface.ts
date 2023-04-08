@@ -13,6 +13,8 @@ export interface IVideo extends IBase {
   comments: IComment[];
 }
 
+export interface IVideoDto extends Pick<IVideo, 'name' | 'description' | 'videoPath' | 'thumbnailPath'> {}
+
 export interface IVideoState {
   loading: boolean;
   videos: IVideo[] | null;
