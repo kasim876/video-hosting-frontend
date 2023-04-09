@@ -23,7 +23,7 @@ const SubscribeButton: FC<ISubscribeButton> = ({toChannel}) => {
 
   const [subscribe, {isLoading}] = useSubscribeToChannelMutation();
 
-  if (user.id === toChannel.id) return null;
+  if (user?.id === toChannel.id || !user) return null;
 
   const isSub = data?.subscriptions?.find(sub => sub.toChannel.id === toChannel.id);
 
