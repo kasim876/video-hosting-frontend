@@ -6,6 +6,7 @@ import useOutside from '@/hooks/useOutside';
 import AuthButtons from '../auth-buttons/AuthButtons';
 import AuthForm from '../auth-form/AuthForm';
 import Profile from '../profile/Profile';
+import UploadVideo from '../upload-video/UploadVideo';
 
 const RightIcons: FC = () => {
   const [type, setType] = useState<'register' | 'login'>('login');
@@ -14,7 +15,13 @@ const RightIcons: FC = () => {
 
   const {user} = useAuth();
 
-  if (user) return <Profile />;
+  if (user)
+    return (
+      <div className="flex items-center">
+        <UploadVideo />
+        <Profile />
+      </div>
+    );
 
   return (
     <div>

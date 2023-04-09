@@ -1,0 +1,9 @@
+.root {
+  @apply flex flex-wrap bg-[#272532] w-[50%] p-10 rounded-lg;
+}
+
+.uploadScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

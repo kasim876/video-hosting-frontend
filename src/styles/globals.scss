@@ -84,6 +84,20 @@ input {
   }
 }
 
+textarea {
+  display: inline-block;
+  font-family: inherit;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 button {
   display: inline-block;
   border: none;

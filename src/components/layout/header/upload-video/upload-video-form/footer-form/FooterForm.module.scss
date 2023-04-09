@@ -1,0 +1,21 @@
+.root {
+  @apply flex items-center justify-between w-full;
+}
+
+.status {
+  @apply flex items-center text-base gap-2;
+}
+
+.iconsUploaded {
+  .checkIcon {
+    @apply text-primary;
+  }
+
+  .uploadIcon {
+    display: none;
+  }
+}
+
+.checkIcon {
+  @apply text-primary;
+}

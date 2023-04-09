@@ -21,8 +21,6 @@ const AddCommentForm: FC<{videoId: number}> = ({videoId}) => {
   const [createComment, status] = commentApi.useCreateCommentMutation();
 
   const onSubmit: SubmitHandler<ICommentDto> = async data => {
-    console.log(data);
-
     createComment({...data, videoId}).then(() => reset());
   };
 
