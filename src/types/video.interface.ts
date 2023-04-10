@@ -5,7 +5,7 @@ import {IUser} from '@/types/user.interface';
 export interface IVideo extends IBase {
   name: string;
   views: number;
-  likes: number;
+  likesCount: number;
   description: string;
   videoPath: string;
   thumbnailPath: string;
